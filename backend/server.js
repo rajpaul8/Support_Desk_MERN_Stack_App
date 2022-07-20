@@ -24,7 +24,6 @@ app.get("/", (req, res) =>
 app.use('/api/users', require('./routes/userRoutes'))
 
 
-
 // Middleware
 
 app.use(errorHandler);
