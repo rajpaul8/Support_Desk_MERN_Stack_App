@@ -51,12 +51,10 @@ const registerUser = asyncHandler(async (req, res) => {
 // @access Public
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-
   // find if user login with an existing email id
   const user = await User.findOne({ email });
-
   // chekc if the email and password matches
-  if (user && bcrypt.compare(password, user.password)) {
+  if (user && (await bcrypt.compare(password, user.password))) {
     res.status(200).json({
       _id: user._id,
       name: user.name,
@@ -67,7 +65,6 @@ const loginUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error("Invalid credentials");
   }
-  res.send("Login Route");
 });
 
 // Generate Toeken
