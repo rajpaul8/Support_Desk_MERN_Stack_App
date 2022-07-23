@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 100vh;
 }
 
@@ -353,6 +353,23 @@ footer {
   position: sticky;
   top: 95vh;
   text-align: center;
+}
+
+/* Notes Modal Styles */
+.modal-content {
+  width: 600px;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  border:1px solid black;
+  padding: 0.5rem;
+  background-color: white;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12);
 }
 
 .loadingSpinnerContainer {

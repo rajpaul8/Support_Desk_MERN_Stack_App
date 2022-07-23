@@ -5,17 +5,18 @@ const API_URL = "http://localhost:5000/api/tickets/";
 // @Desc: Add new note
 // @Route: POST'/tickets/:ticketId/notes'
 // Access: Private
-const addNote = async (ticketId, note, token) => {
+const addNote = async (noteText, ticketID, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   };
   const response = await axios.post(
-    API_URL + ticketId + "/notes",
-    note,
+    API_URL + ticketID + "/notes",
+    { text: noteText },
     config
-  );
+    );
+    console.log(response.data);
   return response.data;
 };
 
@@ -28,7 +29,7 @@ const getNotes = async (ticketId, token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.get(API_URL+ticketId+"/notes", config);
+  const response = await axios.get(API_URL + ticketId + "/notes", config);
   return response.data;
 };
 
