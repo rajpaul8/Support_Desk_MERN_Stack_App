@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ticketSchema = mongoose.Schema(
   {
-    //   Link theticket user with the registerd user opening the ticket
+    //   Link the ticket user with the registerd user opening the ticket
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -24,7 +24,7 @@ const ticketSchema = mongoose.Schema(
       default: "new",
     },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Ticket", ticketSchema);

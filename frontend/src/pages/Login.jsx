@@ -2,10 +2,10 @@ import { useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-import { login, reset } from "../../features/auth/authSlice";
+import { login, reset } from "../features/auth/authSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Spinner from "../../components/Spinner";
+import Spinner from "../components/Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({
