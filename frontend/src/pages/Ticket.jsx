@@ -1,12 +1,8 @@
 import Modal from "react-modal";
 import { BackButton } from "../components/BackButton";
 import { useSelector, useDispatch } from "react-redux";
-import { reset, getTicket, closeTicket,  } from "../features/tickets/ticketSlice";
-import {
-  getNotes,
-  reset as notesReset,
-  addNote,
-} from "../features/notes/noteSlice";
+import { reset, getTicket, closeTicket } from "../features/tickets/ticketSlice";
+import { getNotes, addNote } from "../features/notes/noteSlice";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -57,14 +53,13 @@ function Ticket() {
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
-// Submit Modal Form to raise Note with respect to a ticket
+  // Submit Modal Form to raise Note with respect to a ticket
   const onNoteSubmit = (e) => {
     e.preventDefault();
     dispatch(addNote({ noteText, ticketID }));
     // toast.success('Note Text Added')
-    closeModal()
+    closeModal();
   };
-
 
   if (isLoading) {
     return <Spinner></Spinner>;

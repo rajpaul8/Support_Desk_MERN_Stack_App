@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/tickets/";
+const API_URL = "/api/tickets/";
 
 // @Desc: Add new note
 // @Route: POST'/tickets/:ticketId/notes'
